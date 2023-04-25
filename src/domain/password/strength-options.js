@@ -8,4 +8,6 @@ const StrengthOptionLabel = {
   [StrengthOption.Strong]: "Password is strong enough",
 };
 
-export { StrengthOption, StrengthOptionLabel };
+const COUNT_VAILDATORS_STRONG = 5;
+
+export { StrengthOption, StrengthOptionLabel, COUNT_VAILDATORS_STRONG };

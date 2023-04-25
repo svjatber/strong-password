@@ -1,26 +1,15 @@
 <script setup>
-import { RULE } from "@/domain/password/rules";
+import { useStrongPasswordStore } from "@/stores";
+import AppPasswordInput from "./components/AppPasswordInput.vue";
 
-const rules = Object.values(RULE);
+const strongPasswordStore = useStrongPasswordStore();
 </script>
 
 <template>
-  <div>
-    <input data-test="password-field" />
-
-    <ul>
-      <li
-        v-for="rule in rules"
-        :key="rule"
-        :data-test-rule-indicator="rule"
-        class="password-hint__rule password-hint__rule--fail"
-      >
-        HINT
-      </li>
-    </ul>
-
-    <span data-test="validation-summary">Strong or Weak?</span>
-  </div>
+  <AppPasswordInput
+    :modelValue="strongPasswordStore.password"
+    @update:model-value="strongPasswordStore.setPassword"
+  />
 </template>
 
 <style scoped></style>

@@ -3,12 +3,8 @@ import { mount } from "@vue/test-utils";
 
 import App from "@/App.vue";
 import { createPinia } from "pinia/dist/pinia";
-import { RULE } from "@/domain/password/rules";
 import { useStrongPasswordStore } from "@/stores/strong-password";
-import {
-  StrengthOption,
-  StrengthOptionLabel,
-} from "../domain/password/strength-options";
+import { StrengthOption, StrengthOptionLabel, RULE } from "../domain/password";
 
 const RULE_INDICATOR_CLASS = {
   pass: "password-hint__rule--pass",
